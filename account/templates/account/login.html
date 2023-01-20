@@ -1,0 +1,78 @@
+{% extends 'main/layout.html' %}
+{% block login_page %}
+    <!-- Bread Crumb STRAT -->
+    <div class="banner inner-banner1 ">
+      <div class="container">
+        <section class="banner-detail center-xs">
+          <h1 class="banner-title">ورود</h1>
+          <div class="bread-crumb right-side float-none-xs">
+            <ul>
+              <li><a href="{% url 'index' %}">خانه</a>/</li>
+              <li><span>ورود</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Bread Crumb END -->
+
+
+
+    <!-- CONTAIN START -->
+    <section class="checkout-section ptb-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row justify-content-center">
+              <div class="col-xl-6 col-lg-8 col-md-8 ">
+                <form method="POST" class="main-form full">
+                    {% csrf_token %}
+                  <div class="row">
+                    <div class="col-12 mb-20">
+                      <div class="heading-part heading-bg">
+                        <h2 class="heading">ورود مشتری</h2>
+                         <p style="color: red">{{ username }}  {{ errorMessage }}</p>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="username">نام کاربری</label>
+                        <input id="username" name="username" required placeholder="نام کاربری">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="login-pass">رمز</label>
+                        <input id="login-pass" name="login-pass" type="password" required placeholder="رمز را وارد کنید">
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="check-box left-side">
+                        <span>
+                          <input type="checkbox" name="remember_me" id="remember_me" class="checkbox">
+                          <label for="remember_me">مرا به خاطر بسپار</label>
+                        </span>
+                      </div>
+                      <button name="submit" type="submit" class="btn-color right-side">ورود</button>
+                    </div>
+                    <div class="col-12"> <a title="فراموشی رمز عبور" class="forgot-password mtb-20" href="#">رمز عبور را
+                        فراموش کرده اید؟</a>
+                      <hr>
+                    </div>
+                    <div class="col-12">
+                      <div class="new-account align-center mt-20">
+                        <span<span> تازه به استایل اکسپو آمده اید؟</span> <a class="link" title="Register with Stylexpo" href="register.html">ساخت حساب کاربری جدید</a>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTAINER END -->
+{% endblock login_page %}

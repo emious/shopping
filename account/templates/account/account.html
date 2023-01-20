@@ -1,0 +1,453 @@
+{% extends 'main/layout.html' %}
+{% block login_page %}
+
+    <!-- Bread Crumb STRAT -->
+    <div class="banner inner-banner1 ">
+      <div class="container">
+        <section class="banner-detail center-xs">
+          <h1 class="banner-title">حساب کاربری</h1>
+          <div class="bread-crumb right-side float-none-xs">
+            <ul>
+              <li><a href="{% url 'index' %}">خانه</a>/</li>
+              <li><span>حساب کاربری</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Bread Crumb END -->
+
+    <!-- CONTAIN START -->
+    <section class="checkout-section ptb-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="account-sidebar account-tab mb-sm-30">
+              <div class="dark-bg tab-title-bg">
+                <div class="heading-part">
+                  <div class="sub-title"><span></span>حساب کاربری من</div>
+                </div>
+              </div>
+              <div class="account-tab-inner">
+                <ul class="account-tab-stap">
+                  <li id="step1" class="active"> <a href="javascript:void(0)">داشبورد من<i class="fa fa-angle-right"></i> </a> </li>
+                  <li id="step2"> <a href="javascript:void(0)">لیست آدرس ها<i class="fa fa-angle-right"></i> </a>
+                  </li>
+                  <li id="step3"> <a href="javascript:void(0)">لیست سفارشات من<i class="fa fa-angle-right"></i> </a>
+                  </li>
+                  <li id="step4"> <a href="javascript:void(0)">تغییر رمز عبور <i class="fa fa-angle-right"></i> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div id="data-step1" class="account-content" data-temp="tabdata">
+              <div class="row">
+                <div class="col-12">
+                  <div class="heading-part heading-bg mb-30">
+                    <h2 class="heading m-0">داشبورد حساب</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-30">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="heading-part">
+                      <h3 class="sub-heading">سلام ، {{ user.get_full_name }}</h3>
+
+                    </div>
+                    <p> ایمیل {{ user.email }}  </p>
+                      <p> آخرین ورود {{ user.last_login }} </p>
+                  </div>
+                </div>
+              </div>
+              <div class="m-0">
+                <div class="row">
+                  <div class="col-12 mb-20">
+                    <div class="heading-part">
+                      <h3 class="sub-heading">لیست آدرس ها</h3>
+                    </div>
+                    <hr>
+                  </div>
+
+                    {% for address in profile.address %}
+
+                    <div class="col-md-6">
+                    <div class="cart-total-table address-box commun-table">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>{{ address.title }}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <ul>
+                                  <li class="inner-heading"> <b>{{ address.full_name }}</b> </li>
+                                  <li>
+                                    <p>{{ address.company_name }}</p>
+                                  </li>
+                                  <li>
+                                    <p>{{ address.address }}</p>
+                                  </li>
+                                  <li>
+                                    <p>{{ address.adder_address }}</p>
+                                  </li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                    {% endfor %}
+
+
+
+                </div>
+              </div>
+            </div>
+            <div id="data-step2" class="account-content" data-temp="tabdata" style="display:none">
+              <div class="row">
+                <div class="col-12">
+                  <div class="heading-part heading-bg mb-30">
+                    <h2 class="heading m-0">آدرس ها</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="m-0">
+                <form class="main-form full">
+                  <div class="mb-20">
+                    <div class="row">
+                      <div class="col-12 mb-20">
+                        <div class="heading-part">
+                          <h3 class="sub-heading">آدرس اول</h3>
+                        </div>
+                        <hr>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box">
+                          <input type="text" required placeholder="نام کامل">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box">
+                          <input type="email" required placeholder="آدرس ایمیل">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box">
+                          <input type="text" required placeholder="شرکت">
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box">
+                          <input type="text" required placeholder="شماره تماس">
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="input-box">
+                          <input type="text" required placeholder="آدرس ارسال">
+                          <span>لطفا شماره و خیابان را ارائه دهید</span>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="input-box">
+                          <input type="text" required placeholder="نشانی ارسال">
+                          <span>لطفا مشخصه ای وارد کنید(به عنوان مثال بانک روبرو) این کار به اداره پست کمک می کند آدرس
+                            را آسانتر پیدا کند.</span>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box select-dropdown">
+                          <fieldset>
+                            <select name="shippingCountryId" class="option-drop" id="shippingcountryid">
+                              <option selected="" value="">انتخاب کشور</option>
+                              <option value="AX">هند</option>
+                              <option value="AF">ترکیه</option>
+                              <option value="AL">آلمان</option>
+                              <option value="DZ">انگلیس</option>
+                              <option value="AS">لهستان</option>
+                              <option value="AD">چین</option>
+                              <option value="AO">افغانستان</option>
+                              <option value="AI">لبنان</option>
+                              <option value="AX">ژاپن</option>
+                              <option value="AF">عراق</option>
+                              <option value="AX">فیلیپین</option>
+
+                              <option value="AX">کره جنوبی</option>
+
+
+                            </select>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box select-dropdown" id ='test2'>
+                          <fieldset>
+                            <select name="shippingstateId" class="option-drop" id="provinces_id">
+                              <option value="">انتخاب استان</option>
+                                {% for provice in provinces %}
+                                <option value="DN">{{ provice.name }}</option>
+                                {% endfor %}
+                            </select>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box select-dropdown">
+                          <fieldset>
+                            <select name="shippingstateId" class="option-drop" id="cities_id">
+                              <option value="">انتخاب شهر</option>
+                                {% for city in cities %}
+                                <option value="DN">{{ city.name }}</option>
+                                {% endfor %}
+                            </select>
+                          </fieldset>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="input-box">
+                          <input type="text" required placeholder="کدپستی">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mb-20">
+                      <div class="heading-part">
+                        <h3 class="sub-heading">آدرس صورتحساب</h3>
+                      </div>
+                      <hr>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box">
+                        <input type="text" required placeholder="نام کامل">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box">
+                        <input type="text" required placeholder="آدرس ایمیل">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box">
+                        <input type="text" required placeholder="شرکت">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box">
+                        <input type="text" required placeholder="شماره تماس">
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="input-box">
+                        <input type="text" required placeholder="آدرس دوم">
+                        <span>لطفا شماره و خیابان را ارائه دهید</span>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="input-box">
+                        <input type="text" required placeholder="نشانی صورتحساب">
+                        <span>لطفا مشخصه ای وارد کنید(به عنوان مثال بانک روبرو) این کار به اداره پست کمک می کند آدرس را
+                          آسانتر پیدا کند.</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box select-dropdown" id="test3">
+                        <fieldset>
+                          <select name="billingcountryId" class="option-drop" id="billingcountryid">
+                            <option selected="" value="">ایران</option>
+
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                    {% csrf_token %}
+                      <div class="input-box select-dropdown">
+                        <fieldset>
+                          <select name="billingstateId"  id="test5">
+                            <option value="">انتخاب استان</option>
+                            {% for provice in provinces %}
+                                <option id="single_id" value="{{ provice.id }}">{{ provice.name }}</option>
+                                {% endfor %}
+                          </select>
+                        </fieldset>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                    {% csrf_token %}
+                      <div class="input-box select-dropdown">
+                          <fieldset>
+                            <select name="shippingstateId" id="cities_id_one">
+                                <option> انتخاب شهر</option>
+                            </select>
+                          </fieldset>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-box">
+                        <input type="text" required placeholder="کدپستی">
+                      </div>
+                    </div>
+
+                    <div class="col-md-12">
+                      <div class="check-box">
+                        <span>
+                          <input type="checkbox" class="checkbox" id="chk-billing-address" name="chk-billing-address">
+                          <label for="chk-billing-address">از آدرس تحویل من به عنوان آدرس صورتحساب استفاده کنید</label>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div id="data-step3" class="account-content" data-temp="tabdata" style="display:none">
+              <div id="form-print" class="admission-form-wrapper">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="heading-part heading-bg mb-30">
+                      <h2 class="heading m-0">سفارشات من</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 mb-xs-30">
+                    <div class="cart-item-table commun-table">
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th colspan="4">
+                                <ul>
+                                  <li><span>سفارش ثبت شده</span> <span>17 تیرماه 1401</span></li>
+                                  <li class="price-box"><span>مجموع</span> <span class="price">2500 هزارتومان</span>
+                                  </li>
+                                  <li><span>شماره سفارش</span> <span>#011052</span></li>
+                                </ul>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="product-page.html">
+                                  <div class="product-image">
+                                    <img alt="Stylexpo" src="images/product/product_1_md.jpg">
+                                  </div>
+                                </a>
+                              </td>
+                              <td>
+                                <div class="product-title">
+                                  <a href="product-page.html">پالتوی پاییزه وپشمی داخل کرک</a>
+                                </div>
+                                <div class="product-info-stock-sku m-0">
+                                  <div>
+                                    <label>تعداد: </label>
+                                    <span class="info-deta">1</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="base-price price-box">
+                                  <span class="price">1500 هزارتومان</span>
+                                </div>
+                              </td>
+                              <td>
+                                <i title="حذف محصول از سبد خرید" data-id="100" class="fa fa-trash cart-remove-item"></i>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="product-page.html">
+                                  <div class="product-image">
+                                    <img alt="Stylexpo" src="images/product/product_2_md.jpg">
+                                  </div>
+                                </a>
+                              </td>
+                              <td>
+                                <div class="product-title">
+                                  <a href="product-page.html">کیف مسافرتی کاربردی دو بنده</a>
+                                </div>
+                                <div class="product-info-stock-sku m-0">
+                                  <div>
+                                    <label>تعداد: </label>
+                                    <span class="info-deta">1</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="base-price price-box">
+                                  <span class="price">1500 هزارتومان</span>
+                                </div>
+                              </td>
+                              <td>
+                                <i title="حذف محصول از سبد خرید" data-id="100" class="fa fa-trash cart-remove-item"></i>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="print-btn text-center mt-30">
+                    <button onclick="printDiv('form-print')" class="btn btn-color" type="button">چاپ</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="data-step4" class="account-content" data-temp="tabdata" style="display:none">
+              <div class="row">
+                <div class="col-12">
+                  <div class="heading-part heading-bg mb-30">
+                    <h2 class="heading m-0">تغییر رمز عبور</h2>
+                  </div>
+                </div>
+              </div>
+              <form class="main-form full">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="input-box">
+                      <label for="old-pass">رمز قدیمی</label>
+                      <input type="password" placeholder="رمز قدیمی" required id="old-pass">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-box">
+                      <label for="login-pass">رمز عبور</label>
+                      <input type="password" placeholder="رمز جدید وارد کنید" required id="login-pass">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-box">
+                      <label for="re-enter-pass">رمز عبور را مجدد وارد کنید</label>
+                      <input type="password" placeholder="رمز جدید را مجدد وارد کنید" required id="re-enter-pass">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn-color" type="submit" name="submit">تغییر رمز عبور</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% load static %}
+  <script src="{%static 'main/js/cities.js' %}"></script>
+    <!-- CONTAINER END -->
+{% endblock login_page %}
+
+
+

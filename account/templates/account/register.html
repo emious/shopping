@@ -1,0 +1,102 @@
+{% extends 'main/layout.html' %}
+{% block login_page %}
+
+    <!-- Bread Crumb STRAT -->
+    <div class="banner inner-banner1 ">
+      <div class="container">
+        <section class="banner-detail center-xs">
+          <h1 class="banner-title">ثبت نام</h1>
+          <div class="bread-crumb right-side float-none-xs">
+            <ul>
+              <li><a href="{% url 'index' %}">خانه</a>/</li>
+              <li><span>ثبت نام</span></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!-- Bread Crumb END -->
+
+    <!-- CONTAIN START -->
+    <section class="checkout-section ptb-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row justify-content-center">
+              <div class="col-xl-6 col-lg-8 col-md-8 ">
+                <form method="POST" class="main-form full">
+                     {% csrf_token %}
+                  <div class="row">
+                    <div class="col-12 mb-20">
+                      <div class="heading-part heading-bg">
+                        <h2 class="heading">ایجاد حساب برای شما</h2>
+                          <p style="color: red">{{ username }}  {{ errorMessage }}</p>
+                      </div>
+                    </div>
+                      {{ form.errors }}
+                      {{ form.non_field_errors }}
+                      <div class="col-12">
+                      <div class="input-box">
+                        <label for="username">نام کاربری</label>
+                        <input type="text" name="username" id="username" required placeholder="نام کاربری">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="f-name">نام</label>
+                        <input type="text" name="f_name" id="f-name" required placeholder="نام">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="l-name">نام خانوادگی</label>
+                        <input type="text" name="l_name" id="l-name" required placeholder="نام خانوادگی">
+                      </div>
+                    </div>
+                      <div class="col-12">
+                      <div class="input-box">
+                        <label for="mobile">شماره همراه</label>
+                        <input type="text" name="mobile" id="mobile" required placeholder="شماره همراه">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="login-email">آدرس ایمیل</label>
+                        <input id="login-email" name="email" type="email" required placeholder="آدرس ایمیل">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="login-pass">رمز عبور</label>
+                        <input id="login-pass" name="password" type="password" required placeholder="رمز عبور را وارد کنید">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="input-box">
+                        <label for="re-enter-pass">رمز عبور را مجدد وارد کنید</label>
+                        <input id="re-enter-pass" name="rep_password" type="password" required placeholder="رمز عبور را مجدد وارد کنید">
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="check-box left-side mb-20">
+                        <span>
+                          <input type="checkbox" name="remember_me" id="remember_me" class="checkbox">
+                          <label for="remember_me">مرا به خاطر بسپار</label>
+                        </span>
+                      </div>
+                      <button name="submit" type="submit" class="btn-color right-side">ارسال</button>
+                    </div>
+                    <div class="col-12">
+                      <hr>
+                      <div class="new-account align-center mt-20"> <span>از قبل یک حساب دارید؟</span> <a class="link" title="Register with Stylexpo" href="login.html">وارد شوید</a> </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CONTAINER END -->
+{% endblock login_page %}
