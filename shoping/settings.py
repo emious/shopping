@@ -84,8 +84,8 @@ WSGI_APPLICATION = 'shoping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE'  : 'django.db.backends.mysql', # <-- UPDATED line
-        'NAME'    : 'ShoppingDB',                 # <-- UPDATED line
-        'USER'    : 'shopping',                     # <-- UPDATED line
+        'NAME'    : 'shopping',                 # <-- UPDATED line
+        'USER'    : 'root',                     # <-- UPDATED line
         'PASSWORD': '1234',              # <-- UPDATED line
         'HOST'    : 'localhost',                # <-- UPDATED line
         'PORT'    : '3306',
@@ -136,6 +136,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 LOGIN_URL = '/account/login_page'
 LOGIN_REDIRECT_URL = ''

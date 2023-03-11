@@ -1,19 +1,22 @@
 {% extends 'main/layout.html' %}
+{% load static %}
 {% block main %}
 <!-- BANNER STRAT -->
     <section class="">
       <div id="owl-example" class="banner owl-carousel">
         <div class="main-banner">
-          <div class="item">
-            <div class="banner-1"> <img src="media/templatePics/banner1.jpg" alt="Stylexpo">
+
+    {% for slide in sliders %}
+        <div class="item">
+            <div class="banner-1"> <img src='/media/{{ slide.image }}' alt="{{ slide.title }}">
               <div class="banner-detail">
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-6 col-7 offset-lg-6 offset-5">
                       <div class="banner-detail-inner slider-animation animated-1">
-                        <span class="slogan">کالکشن سبک زندگی</span>
-                        <h1 class="banner-title animated">بیشتر سبک های مد</h1>
-                        <p class="offer">ارسال رایگان برای همه سفارش های بالای 900هزارتومان</p>
+                        <span class="slogan">  {{ slide.slogan }}</span>
+                        <h1 class="banner-title animated">{{ slide.title }}</h1>
+                        <p class="offer">{{ slide.description }}</p>
                         <a class="btn btn-color" href="shop.html"> همین حالا خرید کنید!</a>
                       </div>
                     </div>
@@ -22,48 +25,8 @@
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="banner-video wrap-video">
-              <video id="video-player" class="video-js" loop="" muted="" autoplay="" playsinline="" preload="auto" data-origwidth="0" data-origheight="0" controls="" src="video/fashion-trends.mp4"></video>
-            </div>
-          </div>
-          <div class="item">
-            <div class="banner-2"> <img src="media/templatePics/banner2.jpg" alt="Stylexpo">
-              <div class="banner-detail">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-8 col-8 offset-1">
-                      <div class="banner-detail-inner slider-animation animated-2">
-                        <span class="slogan">فصل تابستان</span>
-                        <h1 class="banner-title  animated">کالکشن مد 20201</h1>
-                        <p class="offer">جذاب ترین استایل های این هفته را بررسی کنید.</p>
-                        <a class="btn btn-color" href="shop.html"> همین حالا خرید کنید!</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="banner-3"> <img src="media/templatePics/banner3.jpg" alt="Stylexpo">
-              <div class="banner-detail">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-6 col-7 offset-lg-6 offset-5">
-                      <div class="banner-detail-inner slider-animation animated-1">
-                        <span class="slogan">پرطرفدارای حال حاضر</span>
-                        <h1 class="banner-title animated">پرطرفدارترین مد فروش</h1>
-                        <p class="offer">جذاب ترین استایل های این هفته را بررسی کنید.</p>
-                        <a class="btn btn-color" href="shop.html"> همین حالا خرید کنید!</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    {% endfor %}
+    </div>
       </div>
     </section>
     <!-- BANNER END -->
@@ -75,40 +38,21 @@
       <div class="">
         <div class="">
           <div class="row mlr_-10">
-            <div class="col-md-4 plr-10">
-              <div class="sub-banner sub-banner1">
-                <img alt="Stylexpo" src="media/templatePics/sub-banner1.jpg">
-                <div class="sub-banner-detail">
-                  <div class="sub-banner-slogan">برندهای برتر</div>
-                  <div class="sub-banner-title sub-banner-title-color">عینک آفتابی</div>
-                  <div class="sub-banner-subtitle">فروش فلش</div>
-                  <a class="btn btn-color" href="shop.html"> همین حالا خرید کنید!</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-xs-10 plr-10">
+              {% for sub in sub_banner %}
+                   <div class="col-md-4 mt-xs-10 plr-10">
               <div class="">
                 <div class="sub-banner sub-banner2">
-                  <img alt="Stylexpo" src="media/templatePics/sub-banner2.jpg">
+                  <img alt="{{ sub.title }}" src="/media/{{ sub.image }}">
                   <div class="sub-banner-detail">
-                    <div class="sub-banner-slogan">سبک زندگی</div>
-                    <div class="sub-banner-title sub-banner-title-color">پرطرفدار 1401</div>
-                    <div class="sub-banner-subtitle"> فروش نهایی</div>
+                    <div class="sub-banner-slogan">{{ sub.slogan }}</div>
+                    <div class="sub-banner-title sub-banner-title-color">{{ sub.title }}</div>
+                    <div class="sub-banner-subtitle">{{ sub.description }}</div>
                     <a class="btn btn-color " href="shop.html"> همین حالا خرید کنید!</a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mt-xs-10 plr-10">
-              <div class="sub-banner sub-banner3">
-                <img alt="Stylexpo" src="media/templatePics/sub-banner3.jpg">
-                <div class="sub-banner-detail">
-                  <div class="sub-banner-slogan">ویژه</div>
-                  <div class="sub-banner-title sub-banner-title-color">ساعت کلاسیک</div>
-                  <div class="sub-banner-subtitle">کالکشن</div>
-                  <a class="btn btn-color " href="shop.html"> همین حالا خرید کنید!</a>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -771,7 +715,7 @@
     <!-- Top Categories End-->
 
     <!-- perellex-banner Start -->
-    <section>
+        <section>
       <div class="perellex-banner">
         <div class="container">
           <div class="row">
@@ -785,7 +729,7 @@
             </div>
           </div>
         </div>
-      </div>
+       </div>
     </section>
     <!-- perellex-banner End -->
 
@@ -1252,23 +1196,19 @@
     <section class="pt-70">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
+    {% for small in small_banner %}
+        <div class="col-lg-6">
             <div class="sub-banner small-banner small-banner1">
               <a href="shop.html">
-                <img src="media/templatePics/small-banner1.jpg" alt="Stylexpo">
+                <img src="media/{{ small.image }}" alt="{{ small.title }}">
               </a>
             </div>
           </div>
-          <div class="col-lg-6 mt-sm-30">
-            <div class="sub-banner small-banner small-banner2">
-              <a href="shop.html">
-                <img src="media/templatePics/small-banner2.jpg" alt="Stylexpo">
-              </a>
-            </div>
-          </div>
-        </div>
+    {% endfor %}
+     </div>
       </div>
     </section>
+
     <!--small banner Block Start-->
 
     <!--  Special products Products Slider Block Start  -->

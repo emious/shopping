@@ -39,8 +39,21 @@ class Product(models.Model):
 '''
 
 
+class Banner(models.Model):
+    image = models.ImageField(upload_to='sliders')
+    link = models.CharField(max_length=2048)
+    slogan = models.CharField(max_length=50, null=True, blank=True)
+    title = models.CharField(max_length=50, null=True, blank=True)
+    description = models.CharField(max_length=70, null=True, blank=True)
+
+    # state == 1 for banners of template
+    # state == 2 for SUB-BANNER of template
+    state_choice = [("sld", "slider"), ("sub", "sub banner"), ("sng", "single banner"), ("sml", "small banner")]
+    state = models.CharField(max_length=3, choices=state_choice)
 
 
+
+'''
 class Test(models.Model):
 
     name = models.CharField(max_length=50)
@@ -51,3 +64,4 @@ class Test(models.Model):
 
 
 
+'''
