@@ -5,6 +5,8 @@
 <!--<![endif]-->
 
 
+{{ category }}
+
 <head>
   <!-- Basic Page Needs
   ================================================== -->
@@ -132,23 +134,18 @@
                 <div style="height: 100%;" data-simplebar data-simplebar-auto-hide="false">
                   <div class="popup-detail">
                     <ul class="cate-inner">
-
-                        {% for each in category %}
-                            {% if each.sub|length == 0 %}
-                            <li class="level">
-                               <a href="shop.html" class="page-scroll"><i class="fa fa-camera-retro"></i>{{ each.name }}</a>
-                            </li>
-                            {% else %}
-                                 <li class="level sub-megamenu ">
+                      <li class="level sub-megamenu">
                         <span class="opener plus"></span>
-                        <a href="shop.html" class="page-scroll"><i class="fa fa-tablet"></i> {{ each.name }}</a>
-                        <div class="megamenu mega-sub-menu">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-female"></i>مد (10)</a>
+                        <div class="megamenu  mega-sub-menu">
                           <div class="megamenu-inner-top">
                             <ul class="sub-menu-level1">
                               <li class="level2">
-                                <ul class="sub-menu-level2">
-                                    {% for sub in each.sub %}
-                                     <li class="level3"><a href="shop.html"><span>■</span>{{ sub.name }}</a></li>
+                                <ul class="sub-menu-level2 ">
+
+                                    {% for cat in main_category %}
+                                        <li class="level3"><a href="shop.html"><span>■</span> {{ cat.name }} </a></li>
+
                                     {% endfor %}
 
                                 </ul>
@@ -157,8 +154,83 @@
                           </div>
                         </div>
                       </li>
-                            {% endif %}
-                        {% endfor %}
+                      <li class="level">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-camera-retro"></i> دوربین ها (70)</a>
+                      </li>
+                      <li class="level">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-desktop"></i>کامپیوتر (10)</a>
+                      </li>
+                      <li class="level sub-megamenu">
+                        <span class="opener plus"></span>
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-clock-o"></i>ساعت (15)</a>
+                        <div class="megamenu mega-sub-menu">
+                          <div class="megamenu-inner-top">
+                            <ul class="sub-menu-level1">
+                              <li class="level2">
+                                <ul class="sub-menu-level2">
+                                  <li class="level3"><a href="shop.html"><span>■</span>لباس</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>جین اسپرت </a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>دامن ها</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>برترین ها</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>لباس خواب</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>جین</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>قاب گوشی</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="level">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-shopping-bag"></i>کیف (18)</a>
+                      </li>
+                      <li class="level sub-megamenu ">
+                        <span class="opener plus"></span>
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-tablet"></i>گوشی هوشمند (20)</a>
+                        <div class="megamenu mega-sub-menu">
+                          <div class="megamenu-inner-top">
+                            <ul class="sub-menu-level1">
+                              <li class="level2">
+                                <ul class="sub-menu-level2">
+                                  <li class="level3"><a href="shop.html"><span>■</span>لباس</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>جین اسپرت </a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>دامن ها</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>برترین ها</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>لباس خواب</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>جین</a></li>
+                                </ul>
+                              </li>
+                              <li class="level2">
+                                <ul class="sub-menu-level2 ">
+                                  <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>قاب گوشی</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                  <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="level">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-heart"></i>نرم افزار</a>
+                      </li>
+                      <li class="level "><a href="shop.html" class="page-scroll"><i class="fa fa-headphones"></i>(12)
+                          هدفون</a></li>
+                      <li class="level">
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-microphone"></i>لوازم جانبی (70)</a>
+                      </li>
+                      <li class="level"><a href="shop.html" class="page-scroll"><i class="fa fa-bolt"></i>پرینتر و
+                          جوهر</a></li>
+                      <li class="level"><a href="shop.html" class="page-scroll"><i class="fa fa-plus-square"></i>دسته
+                          بندی بیشتر</a></li>
                     </ul>
                   </div>
                 </div>
@@ -493,17 +565,37 @@
                 <div class="category-dropdown select-dropdown">
                   <fieldset>
                     <select id="search-category" class="option-drop" name="search-category">
-                                          <option value="">دسته بندی ها</option>
-                        {% for each in category %}
-                            {% if each.sub|length == 0 %}
-                                <option value="20">{{ each.name }}</option>
-                            {% else %}
-                                <option value="20">{{ each.name }}</option>
-                                    {% for sub in each.sub %}
-                                        <option value="48">&nbsp;&nbsp;&nbsp;- {{ sub.name }}</option>
-                                    {% endfor %}
-                            {% endif %}
-                        {% endfor %}
+                      <option value="">دسته بندی ها</option>
+                      <option value="20">الکترونیک</option>
+                      <option value="26">■ کامپیوتر</option>
+                      <option value="43">&nbsp;&nbsp;&nbsp;- Dell Inspiron</option>
+                      <option value="44">&nbsp;&nbsp;&nbsp;- Hp Notebook</option>
+                      <option value="47">&nbsp;&nbsp;&nbsp;- Sony Vio</option>
+                      <option value="55">&nbsp;&nbsp;&nbsp;- Samsung Tablet</option>
+                      <option value="27">■ مک</option>
+                      <option value="48">&nbsp;&nbsp;&nbsp;- Desktop Mac</option>
+                      <option value="49">&nbsp;&nbsp;&nbsp;- Laptop Mac</option>
+                      <option value="50">&nbsp;&nbsp;&nbsp;- Samsung Mac</option>
+                      <option value="38">&nbsp;&nbsp;&nbsp;- Android tablets</option>
+                      <option value="51">■ لپ تاپ</option>
+                      <option value="52">&nbsp;&nbsp;&nbsp;- Accer laptop</option>
+                      <option value="56">&nbsp;&nbsp;&nbsp;- apple ipad</option>
+                      <option value="53">&nbsp;&nbsp;&nbsp;- HP Laptop</option>
+                      <option value="54">&nbsp;&nbsp;&nbsp;- DELL Laptop</option>
+                      <option value="18">جواهرات</option>
+                      <option value="25">اجزاء</option>
+                      <option value="29">■ موس وگوی های حرکتی</option>
+                      <option value="28">■ مانیتور</option>
+                      <option value="35">&nbsp;&nbsp;&nbsp;- Desktop</option>
+                      <option value="36">&nbsp;&nbsp;&nbsp;- LED</option>
+                      <option value="30">■ پرینتر</option>
+                      <option value="31">■ اسکنر</option>
+                      <option value="32">■ دوربین های تحت وب</option>
+                      <option value="57">کتاب ها</option>
+                      <option value="17">فضای داخلی</option>
+                      <option value="24">مد</option>
+                      <option value="33">خانگی</option>
+                      <option value="34">لوازم جانبی</option>
                     </select>
                   </fieldset>
                 </div>
@@ -556,35 +648,297 @@
                         </ul>
                       </div>
                       <ul class="nav navbar-nav ">
-                          {% for each in category %}
-                            {% if each.sub|length == 0 %}
-                                 <li class="level">
-                          <a href="shop.html" class="page-scroll"><i class="fa fa-camera-retro"></i>{{ each.name }}</a>
-                        </li>
-                            {% else %}
-                                 <li class="level sub-megamenu ">
+                        <li class="level sub-megamenu">
                           <span class="opener plus"></span>
-                          <a href="shop.html" class="page-scroll"><i class="fa fa-tablet"></i>{{ each.name }}</a>
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-female"></i>مد (10)</a>
                           <div class="megamenu mobile-sub-menu">
                             <div class="megamenu-inner-top">
                               <ul class="sub-menu-level1 d-lg-flex">
                                 <li class="level2">
-                                  <a href="shop.html"><span>زیر شاخه ها</span></a>
+                                  <a href="shop.html"><span>مد کودکان</span></a>
+                                  <ul class="sub-menu-level2 ">
+                                    <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>دامن ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>برترین ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>لباس خواب</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>جین</a></li>
+                                  </ul>
+                                </li>
+                                <li class="level2">
+                                  <div class="sub-menu-slider d-none d-lg-block ">
+                                    <div class="row">
+                                      <div class="owl-carousel sub_menu_slider">
+                                        <div class="product-item">
+                                          <div class="product-image">
+                                            <a href="product-page.html">
+                                              <img src="/media/templatePics/product/product_1_md.jpg" alt="Stylexpo">
+                                            </a>
+                                            <div class="product-detail-inner">
+                                              <div class="detail-inner-left align-center">
+                                                <ul>
+                                                  <li class="pro-cart-icon">
+                                                    <form>
+                                                      <button title="اضافه به سبد خرید"><span></span></button>
+                                                    </form>
+                                                  </li>
+                                                  <li class="pro-wishlist-icon"><a href="wishlist.html" title="لیست علاقه مندی"></a></li>
+                                                  <li class="pro-compare-icon"><a href="compare.html" title="مقایسه"></a></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="product-item-details">
+                                            <div class="product-item-name"> <a href="product-page.html">شلوارک نقطه
+                                                ای</a>
+                                            </div>
+                                            <div class="price-box"> <span class="price">1500 هزارتومان</span>
+                                            </div>
+                                            <div class="rating-summary-block right-side">
+                                              <div title="53%" class="rating-result"> <span style="width:53%"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-item">
+                                          <div class="product-image">
+                                            <a href="product-page.html">
+                                              <img src="/media/templatePics/product/product_2_md.jpg" alt="Stylexpo">
+                                            </a>
+                                            <div class="product-detail-inner">
+                                              <div class="detail-inner-left align-center">
+                                                <ul>
+                                                  <li class="pro-cart-icon">
+                                                    <form>
+                                                      <button title="اضافه به سبد خرید"><span></span></button>
+                                                    </form>
+                                                  </li>
+                                                  <li class="pro-wishlist-icon"><a href="wishlist.html" title="لیست علاقه مندی"></a></li>
+                                                  <li class="pro-compare-icon"><a href="compare.html" title="مقایسه"></a></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="product-item-details">
+                                            <div class="product-item-name"> <a href="product-page.html">شلوارک نقطه
+                                                ای</a> </div>
+                                            <div class="price-box"> <span class="price">1500 هزارتومان</span>
+                                            </div>
+                                            <div class="rating-summary-block right-side">
+                                              <div title="53%" class="rating-result"> <span style="width:53%"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-item">
+                                          <div class="product-image">
+                                            <a href="product-page.html">
+                                              <img src="/media/templatePics/product/product_3_md.jpg" alt="Stylexpo">
+                                            </a>
+                                            <div class="product-detail-inner">
+                                              <div class="detail-inner-left align-center">
+                                                <ul>
+                                                  <li class="pro-cart-icon">
+                                                    <form>
+                                                      <button title="اضافه به سبد خرید"><span></span></button>
+                                                    </form>
+                                                  </li>
+                                                  <li class="pro-wishlist-icon"><a href="wishlist.html" title="لیست علاقه مندی"></a></li>
+                                                  <li class="pro-compare-icon"><a href="compare.html" title="مقایسه"></a></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="product-item-details">
+                                            <div class="product-item-name"> <a href="product-page.html">شلوارک نقطه
+                                                ای</a> </div>
+                                            <div class="price-box"> <span class="price">1500 هزارتومان</span>
+                                            </div>
+                                            <div class="rating-summary-block right-side">
+                                              <div title="53%" class="rating-result"> <span style="width:53%"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-item">
+                                          <div class="product-image">
+                                            <a href="product-page.html">
+                                              <img src="/media/templatePics/product/product_4_md.jpg" alt="Stylexpo">
+                                            </a>
+                                            <div class="product-detail-inner">
+                                              <div class="detail-inner-left align-center">
+                                                <ul>
+                                                  <li class="pro-cart-icon">
+                                                    <form>
+                                                      <button title="اضافه به سبد خرید"><span></span></button>
+                                                    </form>
+                                                  </li>
+                                                  <li class="pro-wishlist-icon"><a href="wishlist.html" title="لیست علاقه مندی"></a></li>
+                                                  <li class="pro-compare-icon"><a href="compare.html" title="مقایسه"></a></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="product-item-details">
+                                            <div class="product-item-name"> <a href="product-page.html">شلوارک نقطه
+                                                ای</a> </div>
+                                            <div class="price-box"> <span class="price">1500 هزارتومان</span>
+                                            </div>
+                                            <div class="rating-summary-block right-side">
+                                              <div title="53%" class="rating-result"> <span style="width:53%"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="product-item">
+                                          <div class="product-image">
+                                            <a href="product-page.html">
+                                              <img src="/media/templatePics/product/product_5_md.jpg" alt="Stylexpo">
+                                            </a>
+                                            <div class="product-detail-inner">
+                                              <div class="detail-inner-left align-center">
+                                                <ul>
+                                                  <li class="pro-cart-icon">
+                                                    <form>
+                                                      <button title="اضافه به سبد خرید"><span></span></button>
+                                                    </form>
+                                                  </li>
+                                                  <li class="pro-wishlist-icon"><a href="wishlist.html" title="لیست علاقه مندی"></a></li>
+                                                  <li class="pro-compare-icon"><a href="compare.html" title="مقایسه"></a></li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="product-item-details">
+                                            <div class="product-item-name"> <a href="product-page.html">شلوارک نقطه
+                                                ای</a> </div>
+                                            <div class="price-box"> <span class="price">1500 هزارتومان</span>
+                                            </div>
+                                            <div class="rating-summary-block right-side">
+                                              <div title="53%" class="rating-result"> <span style="width:53%"></span>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="level">
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-camera-retro"></i> دوربین ها (70)</a>
+                        </li>
+                        <li class="level">
+                          <a href="shop.html" class="page-scroll">
+                            <i class="fa fa-desktop"></i>کامپیوتر (10)<div class="menu-label"><span class="hot-menu">
+                                تازه </span></div>
+                          </a>
+                        </li>
+                        <li class="level sub-megamenu">
+                          <span class="opener plus"></span>
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-clock-o"></i>ساعت (15)</a>
+                          <div class="megamenu mobile-sub-menu">
+                            <div class="megamenu-inner-top">
+                              <ul class="sub-menu-level1 d-lg-flex">
+                                <li class="level2">
+                                  <a href="shop.html"><span>مد آقایان</span></a>
                                   <ul class="sub-menu-level2">
-                                      {% for sub in each.sub %}
-                                          <li class="level3"><a href="shop.html"><span>■</span>{{ sub.name }}</a></li>
-
-
-                                    {% endfor %}
+                                    <li class="level3"><a href="shop.html"><span>■</span>لباس</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>جین اسپرت </a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>دامن ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>برترین ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>لباس خواب</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>جین</a></li>
+                                  </ul>
+                                </li>
+                                <li class="level2">
+                                  <a href="shop.html"><span>مد بانوان</span></a>
+                                  <ul class="sub-menu-level2 ">
+                                    <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>قاب گوشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                  </ul>
+                                </li>
+                                <li class="level2 d-none d-lg-block">
+                                  <a href="shop.html">
+                                    <img src="/media/templatePics/drop_banner.jpg" alt="Stylexpo">
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </li>
+                        <li class="level">
+                          <a href="shop.html" class="page-scroll">
+                            <i class="fa fa-shopping-bag"></i>کیف (18)<div class="menu-label"><span class="new-menu">
+                                جدید </span></div>
+                          </a>
+                        </li>
+                        <li class="level sub-megamenu ">
+                          <span class="opener plus"></span>
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-tablet"></i>گوشی هوشمند (20)</a>
+                          <div class="megamenu mobile-sub-menu">
+                            <div class="megamenu-inner-top">
+                              <ul class="sub-menu-level1 d-lg-flex">
+                                <li class="level2">
+                                  <a href="shop.html"><span>پوشاک بانوان</span></a>
+                                  <ul class="sub-menu-level2">
+                                    <li class="level3"><a href="shop.html"><span>■</span>لباس</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>جین اسپرت </a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>دامن ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>برترین ها</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>لباس خواب</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>جین</a></li>
+                                  </ul>
+                                </li>
+                                <li class="level2">
+                                  <a href="shop.html"><span>پوشاک اقایان</span></a>
+                                  <ul class="sub-menu-level2 ">
+                                    <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>قاب گوشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                  </ul>
+                                </li>
+                                <li class="level2">
+                                  <a href="shop.html"><span>خردسالان</span></a>
+                                  <ul class="sub-menu-level2 ">
+                                    <li class="level3"><a href="shop.html"><span>■</span>کت و ژاکت</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کفش ورزشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>قاب گوشی</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>شلوار</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
+                                    <li class="level3"><a href="shop.html"><span>■</span>کیف پول</a></li>
                                   </ul>
                                 </li>
                               </ul>
                             </div>
                           </div>
                         </li>
-                            {% endif %}
-                        {% endfor %}
-
+                        <li class="level">
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-heart"></i>نرم افزار</a>
+                        </li>
+                        <li class="level "><a href="shop.html" class="page-scroll"><i class="fa fa-headphones"></i>هدفون
+                            (12)
+                          </a></li>
+                        <li class="level">
+                          <a href="shop.html" class="page-scroll"><i class="fa fa-microphone"></i>لوازم جانبی (70)</a>
+                        </li>
+                        <li class="level"><a href="shop.html" class="page-scroll"><i class="fa fa-bolt"></i>پرینتر و
+                            جوهر</a></li>
+                        <li class="level"><a href="shop.html" class="page-scroll"><i class="fa fa-plus-square"></i>دسته
+                            بندی بیشتر</a></li>
                       </ul>
                       <div class="header-top mobile">
                         <div class="">

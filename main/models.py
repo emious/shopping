@@ -1,4 +1,3 @@
-
 from django.db import models
 
 '''
@@ -6,10 +5,6 @@ from django.db import models
 from django.utils import timezone
 
 
-
-class Category(models.Model):
-
-    name = models.CharField(max_length=50)
 
 
 
@@ -50,6 +45,26 @@ class Banner(models.Model):
     # state == 2 for SUB-BANNER of template
     state_choice = [("sld", "slider"), ("sub", "sub banner"), ("sng", "single banner"), ("sml", "small banner")]
     state = models.CharField(max_length=3, choices=state_choice)
+
+
+class Category(models.Model):  # COMM0N
+    name = models.CharField(max_length=50)
+
+    class Meta:
+        abstract = True
+
+
+class MainCategory(Category):
+
+    def __str__(self):
+        return self.name
+
+
+class SubCategory(Category):
+    category = models.ForeignKey(MainCategory, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 
 
